@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "next/head"
 
 function contact() {
 
@@ -12,7 +12,7 @@ function contact() {
 		
 			<h1>Contact</h1>
 		</main>
-	);
+	)
 }
 
-export default contact;
+export default contact

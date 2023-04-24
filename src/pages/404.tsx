@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "next/head"
 
 function NotFound() {
 	
@@ -11,7 +11,7 @@ function NotFound() {
 		
 			<h1>Page Not Found</h1>
 		</main>
-	);
+	)
 }
 
-export default NotFound;
+export default NotFound

@@ -1,9 +1,9 @@
-import Link from "next/link";
-import { useRouter } from 'next/router';
+import Link from "next/link"
+import { useRouter } from 'next/router'
 
 function Header() {
 
-	const router = useRouter();
+	const router = useRouter()
 
 	return (
 
@@ -21,7 +21,7 @@ function Header() {
 				</div>
 			</div>
 		</header>
-	);
+	)
 }
 
-export default Header;
+export default Header

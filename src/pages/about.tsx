@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "next/head"
 
 function about() {
 	return (
@@ -21,7 +21,7 @@ function about() {
 				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi ipsum dolorum amet non, reiciendis explicabo cum ab aut sint nam voluptatem hic. Molestiae, quidem.</p>
 			</div>
 		</main>
-	);
+	)
 }
 
-export default about;
+export default about
