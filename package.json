@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-		"tailwind": "npx tailwindcss -i ./src/styles/index.css -o ./src/styles/output.css --watch"
+    "tailwind": "npx tailwindcss -i ./src/styles/index.css -o ./src/styles/output.css --watch"
   },
   "dependencies": {
     "@types/node": "18.16.0",
@@ -16,6 +16,7 @@
     "autoprefixer": "10.4.14",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
+    "gray-matter": "^4.0.3",
     "next": "13.3.1",
     "postcss": "8.4.23",
     "react": "18.2.0",
