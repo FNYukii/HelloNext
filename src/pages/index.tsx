@@ -51,9 +51,9 @@ export default function Home({ posts }: any) {
 
 			{posts.map((post: any) => (
 
-        <div key={post.slug}>
+        <div key={post.fileSlug}>
 
-          <Link href={`/posts/${post.slug}`}>{post.frontMatter.title}</Link>
+          <Link href={`/posts/${post.fileSlug}`}>{post.frontMatter.title}</Link>
         </div>
       ))}
 		</main>
