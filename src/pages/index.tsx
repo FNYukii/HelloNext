@@ -53,7 +53,7 @@ export default function Home({ posts }: any) {
 
         <div key={post.fileSlug}>
 
-          <Link href={`/posts/${post.fileSlug}`}>{post.frontMatter.title}</Link>
+          <Link href={`/posts/${post.fileSlug}`} className="hover:underline">{post.frontMatter.title}</Link>
         </div>
       ))}
 		</main>
