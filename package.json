@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+		"tailwind": "npx tailwindcss -i ./src/styles/index.css -o ./src/styles/output.css --watch"
   },
   "dependencies": {
     "@types/node": "18.16.0",

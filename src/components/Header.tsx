@@ -8,10 +8,10 @@ function Header() {
 
 			<div>
 
-				<Link href="/">Hello Next</Link>
+				<Link href="/" className="font-bold text-2xl">Hello Next</Link>
 
 				<div>
-					
+
 					<Link href="/about">About</Link>
 					<Link href="/contact">Contact</Link>
 				</div>
