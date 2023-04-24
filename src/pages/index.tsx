@@ -1,6 +1,6 @@
 import Head from "next/head"
 import fs from 'fs'
-import matter from 'gray-matter';
+import matter from 'gray-matter'
 
 
 export const getStaticProps = () => {
@@ -19,10 +19,10 @@ export const getStaticProps = () => {
 		const fileContent = fs.readFileSync(`posts/${fileName}`, 'utf-8')
 
 		// ファイルのFront MatterとContentを分離
-		const { data, content } = matter(fileContent);
-    console.log('title:', data.title);
-    console.log('date:', data.date);
-    console.log('content:', content);
+		const { data, content } = matter(fileContent)
+    console.log('title:', data.title)
+    console.log('date:', data.date)
+    console.log('content:', content)
 
 		return ""
 	})
