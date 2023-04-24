@@ -9,7 +9,7 @@ function NotFound() {
 				<title>Page Not Found - Hello Next</title>
 			</Head>
 		
-			<h1>Page Not Found</h1>
+			<h1 className="text-2xl">Page Not Found</h1>
 		</main>
 	)
 }
