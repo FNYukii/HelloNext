@@ -38,8 +38,6 @@ export const getStaticProps = () => {
 
 export default function Home({ posts }: any) {
 
-	console.log(posts);
-
 	return (
 		<main className="mx-auto w-full lg:width-lg px-4 lg:px-0">
 
