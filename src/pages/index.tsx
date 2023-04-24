@@ -22,10 +22,10 @@ export const getStaticProps = () => {
 		// ファイルのFront MatterとContentを分離
 		const { data, content } = matter(fileContent)
 
-    return {
-      frontMatter: data,
-      fileSlug,
-    };
+		return {
+			frontMatter: data,
+			fileSlug,
+		};
 	})
 
 	return {
@@ -39,21 +39,24 @@ export const getStaticProps = () => {
 export default function Home({ posts }: any) {
 
 	return (
-		<main className="mx-auto w-full lg:width-lg px-4 lg:px-0">
+		<>
 
 			<Head>
 				<title>Hello Next</title>
 			</Head>
 
-			<h1 className="text-2xl">Top</h1>
+			<main className="mx-auto w-full lg:width-lg px-4 lg:px-0">
 
-			{posts.map((post: any) => (
+				<h1 className="text-2xl">Top</h1>
 
-        <div key={post.fileSlug}>
+				{posts.map((post: any) => (
 
-          <Link href={`/posts/${post.fileSlug}`} className="hover:underline">{post.frontMatter.title}</Link>
-        </div>
-      ))}
-		</main>
+					<div key={post.fileSlug}>
+
+						<Link href={`/posts/${post.fileSlug}`} className="hover:underline">{post.frontMatter.title}</Link>
+					</div>
+				))}
+			</main>
+		</>
 	)
 }
