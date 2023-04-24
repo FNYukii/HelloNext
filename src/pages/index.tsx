@@ -1,4 +1,19 @@
 import Head from "next/head"
+import fs from 'fs'
+
+
+export const getStaticProps = () => {
+
+  const posts = fs.readdirSync('posts')
+  console.log('files:', posts)
+	
+  return {
+    props: {
+      posts: [],
+    },
+  }
+}
+
 
 export default function Home() {
 
