@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { useRouter } from 'next/router';
 
 function Header() {
+
+	const router = useRouter();
 
 	return (
 
@@ -12,9 +15,9 @@ function Header() {
 
 				<div className="flex items-center gap-4">
 
-					<Link href="/" className="hover:underline">Top</Link>
-					<Link href="/about" className="hover:underline">About</Link>
-					<Link href="/contact" className="hover:underline">Contact</Link>
+					<Link href="/" className={router.pathname == "/" ? "" : "text-gray-500 hover:text-black"}>Top</Link>
+					<Link href="/about" className={router.pathname == "/about" ? "" : "text-gray-500 hover:text-black"}>About</Link>
+					<Link href="/contact" className={router.pathname == "/contact" ? "" : "text-gray-500 hover:text-black"}>Contact</Link>
 				</div>
 			</div>
 		</header>
