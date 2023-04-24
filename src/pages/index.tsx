@@ -8,8 +8,7 @@ export const getStaticProps = () => {
 
 	// posts内のファイルをすべて取得
 	const files = fs.readdirSync('posts')
-	console.log('files:', files)
-
+	
 	// ファイルの内容を取得
 	const posts = files.map((fileName) => {
 
