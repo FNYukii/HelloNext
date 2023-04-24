@@ -8,7 +8,7 @@ function about() {
 				<title>About - Hello Next</title>
 			</Head>
 		
-			<h1>About</h1>
+			<h1 className="text-2xl">About</h1>
 
 			<div className="mt-4">
 

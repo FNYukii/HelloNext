@@ -10,7 +10,7 @@ function contact() {
 				<title>Contact - Hello Next</title>
 			</Head>
 		
-			<h1>Contact</h1>
+			<h1 className="text-2xl">Contact</h1>
 		</main>
 	)
 }
