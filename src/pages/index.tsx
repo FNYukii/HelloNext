@@ -1,6 +1,7 @@
 import Head from "next/head"
 import fs from 'fs'
 import matter from 'gray-matter'
+import Link from "next/link"
 
 
 export const getStaticProps = () => {
@@ -20,22 +21,24 @@ export const getStaticProps = () => {
 
 		// ファイルのFront MatterとContentを分離
 		const { data, content } = matter(fileContent)
-    console.log('title:', data.title)
-    console.log('date:', data.date)
-    console.log('content:', content)
 
-		return ""
+    return {
+      frontMatter: data,
+      fileSlug,
+    };
 	})
 
 	return {
 		props: {
-			posts: [],
+			posts,
 		},
 	}
 }
 
 
-export default function Home() {
+export default function Home({ posts }: any) {
+
+	console.log(posts);
 
 	return (
 		<main className="mx-auto w-full lg:width-lg px-4 lg:px-0">
@@ -44,7 +47,15 @@ export default function Home() {
 				<title>Hello Next</title>
 			</Head>
 
-			<h1>Top</h1>
+			<h1 className="text-2xl">Top</h1>
+
+			{posts.map((post: any) => (
+
+        <div key={post.slug}>
+
+          <Link href={`/posts/${post.slug}`}>{post.frontMatter.title}</Link>
+        </div>
+      ))}
 		</main>
 	)
 }
