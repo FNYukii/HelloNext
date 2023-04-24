@@ -25,7 +25,7 @@ export const getStaticProps = () => {
 		return {
 			frontMatter: data,
 			fileSlug,
-		};
+		}
 	})
 
 	return {
