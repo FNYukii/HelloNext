@@ -56,6 +56,7 @@ function PostPage({ frontMatter, content }: any) {
 					alt={`${frontMatter.title}の風景`}
 					width={1200}
 					height={500}
+					className="bg-gray-200"
 				/>
 
 				<h1 className="text-2xl font-bold mt-6">{frontMatter.title}</h1>
