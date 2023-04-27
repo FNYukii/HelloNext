@@ -11,7 +11,7 @@ function NotFound() {
 
 			<main className="mx-auto w-full lg:width-lg px-4 lg:px-0">
 				
-				<h1 className="text-2xl">Page Not Found</h1>
+				<h1 className="text-2xl font-bold">Page Not Found</h1>
 			</main>
 		</>
 	)

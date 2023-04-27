@@ -46,7 +46,7 @@ export default function Home({ posts }: any) {
 
 			<main className="mx-auto w-full lg:width-lg px-4 lg:px-0">
 
-				<h1 className="text-2xl">Top</h1>
+				<h1 className="text-2xl font-bold">Top</h1>
 
 				{posts.map((post: any) => (
 
