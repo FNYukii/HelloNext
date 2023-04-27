@@ -1,6 +1,7 @@
 import Head from "next/head"
 import fs from 'fs'
 import matter from 'gray-matter'
+import { marked } from 'marked'
 
 export async function getStaticPaths() {
 
@@ -51,7 +52,8 @@ function PostPage({ frontMatter, content }: any) {
 			<main className="mx-auto w-full lg:width-lg px-4 lg:px-0">
 
 				<h1 className="text-2xl">{frontMatter.title}</h1>
-				<div>{content}</div>
+				
+				<div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
 			</main>
 		</>
 	)
