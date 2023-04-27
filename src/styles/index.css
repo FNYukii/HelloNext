@@ -25,6 +25,10 @@
 	@apply text-xl font-bold mt-6
 }
 
+.markdown h3 {
+	@apply text-lg font-bold mt-6
+}
+
 .markdown p {
 	@apply mt-2
 }
