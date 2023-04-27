@@ -11,5 +11,11 @@ thumbnail: '/images/osaka-business-park.png'
 - Osaka Metro 大阪ビジネスパーク駅
 
 ## ランドマーク
+- クリスタルタワー
+- TWIN21
+- OBPキャッスルタワー
+- ホテルニューオータニ大阪
+- 読売テレビ本社
 
 ## 場所
+大阪府大阪市中央区
