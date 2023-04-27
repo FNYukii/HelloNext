@@ -51,9 +51,9 @@ function PostPage({ frontMatter, content }: any) {
 
 			<main className="mx-auto w-full lg:width-lg px-4 lg:px-0">
 
-				<h1 className="text-2xl">{frontMatter.title}</h1>
+				<h1 className="text-2xl font-bold">{frontMatter.title}</h1>
 				
-				<div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+				<div dangerouslySetInnerHTML={{ __html: marked(content) }} className="markdown"></div>
 			</main>
 		</>
 	)
