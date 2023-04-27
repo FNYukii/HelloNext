@@ -11,7 +11,7 @@ function about() {
 
 			<main className="mx-auto w-full lg:width-lg px-4 lg:px-0">
 
-				<h1 className="text-2xl">About</h1>
+				<h1 className="text-2xl font-bold">About</h1>
 
 				<div className="mt-4">
 
