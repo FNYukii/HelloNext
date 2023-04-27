@@ -2,13 +2,14 @@ import Head from "next/head"
 import fs from 'fs'
 import matter from 'gray-matter'
 import Link from "next/link"
+import Image from "next/image"
 
 
 export const getStaticProps = () => {
 
 	// posts内のファイルをすべて取得
 	const files = fs.readdirSync('posts')
-	
+
 	// ファイルの内容を取得
 	const posts = files.map((fileName) => {
 
@@ -45,6 +46,12 @@ export default function Home({ posts }: any) {
 			</Head>
 
 			<main className="mx-auto w-full lg:width-lg px-4 lg:px-0">
+
+				<Image src={`/images/temmabashi.png`}
+					alt="天満橋の風景"
+					width={1200}
+					height={500}
+				/>
 
 				<h1 className="text-2xl font-bold">Top</h1>
 
