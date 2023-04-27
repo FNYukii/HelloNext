@@ -47,12 +47,6 @@ export default function Home({ posts }: any) {
 
 			<main className="mx-auto w-full lg:width-lg px-4 lg:px-0">
 
-				<Image src={`/images/temmabashi.png`}
-					alt="天満橋の風景"
-					width={1200}
-					height={500}
-				/>
-
 				<h1 className="text-2xl font-bold">Top</h1>
 
 				<div className="mt-4">
