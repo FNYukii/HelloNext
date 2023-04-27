@@ -10,6 +10,5 @@ thumbnail: '/images/sakuranomiya.png'
 ## 駅
 - JR 桜宮駅
 
-## ランドマーク
-
-## 場所
+## 住所
+大阪府大阪市北区および都島区

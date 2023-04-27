@@ -10,6 +10,5 @@ thumbnail: '/images/minoh-park.png'
 ## 駅
 - 阪急電鉄 箕面駅
 
-## ランドマーク
-
 ## 場所
+大阪府箕面市
