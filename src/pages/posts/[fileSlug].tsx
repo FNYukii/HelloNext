@@ -1,6 +1,46 @@
 import Head from "next/head"
+import fs from 'fs'
+import matter from 'gray-matter'
 
-function PostPage() {
+export async function getStaticPaths() {
+
+	// mdファイル一覧を取得
+	const files = fs.readdirSync('posts')
+
+	// 記事ページのpath情報を作成
+	const paths = files.map((fileName) => ({
+
+		params: {
+			fileSlug: fileName.replace(/\.md$/, ''),
+		},
+	}))
+
+	// getStaticPropsに渡す
+	return {
+		paths,
+		fallback: false,
+	}
+}
+
+export async function getStaticProps({ params }: any) {
+
+	// 表示する記事のmdファイルを取得
+	const fileSlug = params.fileSlug
+	const file = fs.readFileSync(`posts/${fileSlug}.md`, 'utf-8')
+
+	// ファイルの内容をfrontMatter部分とcontent部分に分ける
+	const { data, content } = matter(file);
+
+	// PostPageに渡す
+	return {
+		props: {
+			frontMatter: data,
+			content
+		}
+	}
+}
+
+function PostPage({ frontMatter, content }: any) {
 	return (
 		<>
 
@@ -10,8 +50,8 @@ function PostPage() {
 
 			<main className="mx-auto w-full lg:width-lg px-4 lg:px-0">
 
-				<h1 className="text-2xl">Post</h1>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum reprehenderit voluptate culpa accusamus tenetur consectetur vitae ut saepe, nobis officiis modi deserunt similique sequi totam sit excepturi, omnis nostrum maiores?</p>
+				<h1 className="text-2xl">{frontMatter.title}</h1>
+				<div>{content}</div>
 			</main>
 		</>
 	)
