@@ -48,13 +48,16 @@ export default function Home({ posts }: any) {
 
 				<h1 className="text-2xl font-bold">Top</h1>
 
-				{posts.map((post: any) => (
+				<div className="mt-4">
 
-					<div key={post.fileSlug}>
+					{posts.map((post: any) => (
 
-						<Link href={`/posts/${post.fileSlug}`} className="hover:underline">{post.frontMatter.title}</Link>
-					</div>
-				))}
+						<div key={post.fileSlug}>
+
+							<Link href={`/posts/${post.fileSlug}`} className="hover:underline">{post.frontMatter.title}</Link>
+						</div>
+					))}
+				</div>
 			</main>
 		</>
 	)
