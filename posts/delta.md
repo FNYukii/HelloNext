@@ -5,7 +5,7 @@ thumbnail: '/images/yodoyabashi.png'
 ---
 
 ## 概要
-
+行政機関やオフィスが集まる、大阪の経済・行政の中心地。
 
 ## 駅
 - 京阪電車 淀屋橋駅
