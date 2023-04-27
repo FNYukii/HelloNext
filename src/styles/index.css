@@ -20,3 +20,19 @@
     width: 640px;
   }
 }
+
+.markdown h2 {
+	@apply text-xl font-bold mt-6
+}
+
+.markdown p {
+	@apply mt-2
+}
+
+.markdown ul {
+	@apply list-disc pl-6 mt-2
+}
+
+.markdown li {
+	@apply text-gray-600 leading-7
+}

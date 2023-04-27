@@ -11,7 +11,7 @@ function contact() {
 
 			<main className="mx-auto w-full lg:width-lg px-4 lg:px-0">
 				
-				<h1 className="text-2xl">Contact</h1>
+				<h1 className="text-2xl font-bold">Contact</h1>
 			</main>
 		</>
 	)
