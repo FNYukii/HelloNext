@@ -7,7 +7,7 @@ function Header() {
 
 	return (
 
-		<header>
+		<header className="pb-4">
 
 			<div className="mx-auto w-full lg:width-lg px-4 lg:px-0 py-4 flex justify-between">
 
