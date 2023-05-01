@@ -1,5 +1,5 @@
 ---
-title: '桜宮'
+title: '桜ノ宮'
 date: '2023-04-22'
 thumbnail: '/images/sakuranomiya.png'
 ---
