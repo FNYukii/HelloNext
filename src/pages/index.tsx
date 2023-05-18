@@ -17,7 +17,7 @@ export default function Home() {
 
 				<div className="mt-4 flex flex-wrap gap-4">
 
-					<Link href="/posts" className="hover:bg-gray-100 transition">
+					<Link href="/posts" className="hover:bg-gray-100 transition w-full sm:w-fit">
 
 						<div className="border p-4">
 
@@ -28,7 +28,7 @@ export default function Home() {
 						</div>
 					</Link>
 
-					<Link href="/todos" className="hover:bg-gray-100 transition">
+					<Link href="/todos" className="hover:bg-gray-100 transition w-full sm:w-fit">
 
 						<div className="border p-4">
 
