@@ -53,7 +53,15 @@ function tweets() {
 
 					{isLoaded && tweets !== null &&
 						<div>
-							<p>ツイートを{tweets.length}件ロードしました。</p>
+							{tweets.map((tweet) => (
+
+								<div key={tweet.id} className="flex flex-col gap-2 p-2 border">
+									
+									<span className="font-bold">{tweet.displayName}</span>
+									<p>{tweet.text}</p>
+									<span className="text-gray-500">{tweet.createdAt.toString()}</span>
+								</div>
+							))}
 						</div>
 					}
 				</div>
