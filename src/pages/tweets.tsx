@@ -2,6 +2,7 @@ import Tweet from "@/entities/Tweet"
 import { TweetService } from "@/utilities/TweetService"
 import Head from "next/head"
 import { useEffect, useState } from "react"
+import { BsPersonCircle } from "react-icons/bs"
 
 function tweets() {
 
@@ -52,15 +53,23 @@ function tweets() {
 					}
 
 					{isLoaded && tweets !== null &&
-						<div>
+						<div className="flex flex-col gap-4">
 							{tweets.map((tweet) => (
 
-								<div key={tweet.id} className="flex flex-col gap-2 p-2 border">
-									
-									<span className="font-bold">{tweet.displayName}</span>
-									<p>{tweet.text}</p>
-									<span className="text-gray-500">{tweet.createdAt.toString()}</span>
+								<div className="p-2 border flex gap-4">
+
+									<BsPersonCircle className="text-4xl text-gray-500" />
+
+									<div key={tweet.id}>
+
+										<div className="flex gap-2">
+											<span className="font-bold">{tweet.displayName}</span>
+											<span className="text-gray-500">{tweet.createdAt.toString()}</span>
+										</div>
+										<p>{tweet.text}</p>
+									</div>
 								</div>
+
 							))}
 						</div>
 					}
