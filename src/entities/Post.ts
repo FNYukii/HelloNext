@@ -1,10 +1,10 @@
 type Post = {
 
-	slug: string;
+	slug: string
 	frontMatter: {
-		[key: string]: any;
-	};
-	content: string;
+		[key: string]: any
+	}
+	content: string
 }
 
 export default Post
