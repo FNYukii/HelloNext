@@ -24,7 +24,18 @@ export default function Home() {
 							<MdOutlineArticle className="text-gray-500 text-4xl"/>
 
 							<span className="mt-2 block text-xl">Posts</span>
-							<p className="text-gray-500">Articles rendered by SSG</p>
+							<p className="text-gray-500">Public Articles rendered by SSG</p>
+						</div>
+					</Link>
+
+					<Link href="/tweets" className="hover:bg-gray-100 transition w-full sm:w-fit">
+
+						<div className="border p-4">
+
+							<MdChecklist className="text-gray-500 text-4xl"/>
+
+							<span className="mt-2 block text-xl">Tweets</span>
+							<p className="text-gray-500">Public tweets rendered by SSR</p>
 						</div>
 					</Link>
 
@@ -35,7 +46,7 @@ export default function Home() {
 							<MdChecklist className="text-gray-500 text-4xl"/>
 
 							<span className="mt-2 block text-xl">Todos</span>
-							<p className="text-gray-500">Todo List rendered by SSR</p>
+							<p className="text-gray-500">Private todos rendered by SSR</p>
 						</div>
 					</Link>
 				</div>
