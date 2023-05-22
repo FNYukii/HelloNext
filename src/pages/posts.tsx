@@ -3,6 +3,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import Link from "next/link"
 import Image from "next/image"
+import Post from "@/entities/Post"
 
 
 export const getStaticProps = () => {
@@ -22,10 +23,12 @@ export const getStaticProps = () => {
 		// ファイルのFront MatterとContentを分離
 		const { data, content } = matter(fileContent)
 
-		return {
+		const post: Post = {
 			frontMatter: data,
 			slug: slug,
 		}
+
+		return post
 	})
 
 	return {
@@ -36,7 +39,11 @@ export const getStaticProps = () => {
 }
 
 
-export default function Posts({ posts }: any) {
+interface Props {
+	posts: Post[],
+}
+
+export default function Posts(props: Props) {
 
 	return (
 		<>
@@ -51,7 +58,7 @@ export default function Posts({ posts }: any) {
 
 				<div className="mt-4 grid grid-cols-2 sm:grid-cols-3 justify-around gap-y-12 gap-x-4 lg:gap-x-8">
 
-					{posts.map((post: any) => (
+					{props.posts.map((post: Post) => (
 
 						<div key={post.slug}>
 
@@ -67,7 +74,7 @@ export default function Posts({ posts }: any) {
 
 							<div className="mt-2">
 
-							<Link href={`/posts/${post.fileSlug}`} className="hover:underline">{post.frontMatter.title}</Link>
+							<Link href={`/posts/${post.slug}`} className="hover:underline">{post.frontMatter.title}</Link>
 							</div>
 						</div>
 					))}
