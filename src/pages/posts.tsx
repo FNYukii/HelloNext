@@ -8,13 +8,13 @@ import Image from "next/image"
 export const getStaticProps = () => {
 
 	// posts内のファイルをすべて取得
-	const files = fs.readdirSync('posts')
+	const fileNames = fs.readdirSync('posts')
 
 	// ファイルの内容を取得
-	const posts = files.map((fileName) => {
+	const posts = fileNames.map((fileName) => {
 
 		// ファイル名
-		const fileSlug = fileName.replace(/\.md$/, '')
+		const slug = fileName.replace(/\.md$/, '')
 
 		// ファイルの内容
 		const fileContent = fs.readFileSync(`posts/${fileName}`, 'utf-8')
@@ -24,7 +24,7 @@ export const getStaticProps = () => {
 
 		return {
 			frontMatter: data,
-			fileSlug,
+			slug: slug,
 		}
 	})
 
@@ -53,9 +53,9 @@ export default function Posts({ posts }: any) {
 
 					{posts.map((post: any) => (
 
-						<div key={post.fileSlug}>
+						<div key={post.slug}>
 
-							<Link href={`/posts/${post.fileSlug}`} className="transition hover:brightness-90">
+							<Link href={`/posts/${post.slug}`} className="transition hover:brightness-90">
 
 								<Image
 									src={post.frontMatter.thumbnail}

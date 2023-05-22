@@ -7,13 +7,13 @@ import Image from "next/image"
 export async function getStaticPaths() {
 
 	// mdファイル一覧を取得
-	const files = fs.readdirSync('posts')
+	const fileNames = fs.readdirSync('posts')
 
 	// 記事ページのpath情報を作成
-	const paths = files.map((fileName) => ({
+	const paths = fileNames.map((fileName) => ({
 
 		params: {
-			fileSlug: fileName.replace(/\.md$/, ''),
+			slug: fileName.replace(/\.md$/, ''),
 		},
 	}))
 
@@ -27,8 +27,8 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }: any) {
 
 	// 表示する記事のmdファイルを取得
-	const fileSlug = params.fileSlug
-	const file = fs.readFileSync(`posts/${fileSlug}.md`, 'utf-8')
+	const slug = params.slug
+	const file = fs.readFileSync(`posts/${slug}.md`, 'utf-8')
 
 	// ファイルの内容をfrontMatter部分とcontent部分に分ける
 	const { data, content } = matter(file);
