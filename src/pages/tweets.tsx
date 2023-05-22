@@ -56,11 +56,11 @@ function tweets() {
 						<div className="flex flex-col gap-4">
 							{tweets.map((tweet) => (
 
-								<div className="p-2 border flex gap-4">
+								<div key={tweet.id} className="p-2 border flex gap-4">
 
 									<BsPersonCircle className="text-4xl text-gray-500" />
 
-									<div key={tweet.id}>
+									<div>
 
 										<div className="flex gap-2">
 											<span className="font-bold">{tweet.displayName}</span>
