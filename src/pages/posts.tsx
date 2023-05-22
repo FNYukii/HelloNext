@@ -36,7 +36,7 @@ export const getStaticProps = () => {
 }
 
 
-export default function PostsBySSG({ posts }: any) {
+export default function Posts({ posts }: any) {
 
 	return (
 		<>
