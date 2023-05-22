@@ -13,7 +13,7 @@ function todos() {
 
 				<h1 className="text-2xl font-bold">Todos</h1>
 
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+				<p className="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
 			</main>
 		</>
 	)
