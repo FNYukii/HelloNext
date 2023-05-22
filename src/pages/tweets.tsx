@@ -41,19 +41,19 @@ function tweets() {
 
 					{isLoaded && tweets === null &&
 						<div>
-							<p>ロード失敗!</p>
+							<p>ロード失敗。</p>
 						</div>
 					}
 
 					{isLoaded && tweets !== null && tweets.length === 0 &&
 						<div>
-							<p>ツイート0件!</p>
+							<p>ツイートはありません。</p>
 						</div>
 					}
 
 					{isLoaded && tweets !== null &&
 						<div>
-							<p>ツイートを{tweets.length}件ロードしました</p>
+							<p>ツイートを{tweets.length}件ロードしました。</p>
 						</div>
 					}
 				</div>
