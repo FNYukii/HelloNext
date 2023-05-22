@@ -24,8 +24,9 @@ export const getStaticProps = () => {
 		const { data, content } = matter(fileContent)
 
 		const post: Post = {
-			frontMatter: data,
 			slug: slug,
+			frontMatter: data,
+			content: content
 		}
 
 		return post
