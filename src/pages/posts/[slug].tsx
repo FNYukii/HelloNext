@@ -42,7 +42,15 @@ export async function getStaticProps({ params }: any) {
 	}
 }
 
-function PostPage({ frontMatter, content }: any) {
+
+interface Props {
+	frontMatter: {
+		[key: string]: any;
+	},
+	content: string
+}
+
+function PostPage(props: Props) {
 	return (
 		<>
 
@@ -52,16 +60,16 @@ function PostPage({ frontMatter, content }: any) {
 
 			<main className="mx-auto w-full lg:width-lg px-4 lg:px-0">
 
-				<Image src={frontMatter.thumbnail}
-					alt={`${frontMatter.title}の風景`}
+				<Image src={props.frontMatter.thumbnail}
+					alt={`${props.frontMatter.title}の風景`}
 					width={1200}
 					height={500}
 					className="bg-gray-200"
 				/>
 
-				<h1 className="text-2xl font-bold mt-6">{frontMatter.title}</h1>
+				<h1 className="text-2xl font-bold mt-6">{props.frontMatter.title}</h1>
 
-				<div dangerouslySetInnerHTML={{ __html: marked(content) }} className="markdown"></div>
+				<div dangerouslySetInnerHTML={{ __html: marked(props.content) }} className="markdown"></div>
 			</main>
 		</>
 	)
