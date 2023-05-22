@@ -31,32 +31,32 @@ function tweets() {
 
 				<h1 className="text-2xl font-bold">Tweets</h1>
 
-				<p className="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+				<div className="mt-4">
+					{!isLoaded &&
 
-				{!isLoaded &&
+						<div>
+							<p>ロード中...</p>
+						</div>
+					}
 
-					<div>
-						<p>ロード中...</p>
-					</div>
-				}
+					{isLoaded && tweets === null &&
+						<div>
+							<p>ロード失敗!</p>
+						</div>
+					}
 
-				{isLoaded && tweets === null &&
-					<div>
-						<p>ロード失敗!</p>
-					</div>
-				}
+					{isLoaded && tweets !== null && tweets.length === 0 &&
+						<div>
+							<p>ツイート0件!</p>
+						</div>
+					}
 
-				{isLoaded && tweets !== null && tweets.length === 0 &&
-					<div>
-						<p>ツイート0件!</p>
-					</div>
-				}
-
-				{isLoaded && tweets !== null &&
-					<div>
-						<p>ツイートを{tweets.length}件ロードしました</p>
-					</div>
-				}
+					{isLoaded && tweets !== null &&
+						<div>
+							<p>ツイートを{tweets.length}件ロードしました</p>
+						</div>
+					}
+				</div>
 			</main>
 		</>
 	)
