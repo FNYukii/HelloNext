@@ -17,6 +17,7 @@ function Header() {
 
 					<Link href="/" className={router.pathname == "/" ? "" : "text-gray-500 hover:text-black"}>Top</Link>
 					<Link href="/posts" className={router.pathname == "/posts" ? "" : "text-gray-500 hover:text-black"}>Posts</Link>
+					<Link href="/tweets" className={router.pathname == "/tweets" ? "" : "text-gray-500 hover:text-black"}>Tweets</Link>
 					<Link href="/todos" className={router.pathname == "/todos" ? "" : "text-gray-500 hover:text-black"}>Todos</Link>
 				</div>
 			</div>
