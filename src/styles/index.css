@@ -19,6 +19,10 @@
   .width-sm {
     width: 640px;
   }
+
+	.width-600 {
+		width: 600px;
+}
 }
 
 .markdown h2 {

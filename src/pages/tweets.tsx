@@ -40,12 +40,6 @@ function tweets(props: Props) {
 				</button>
 			</div>
 
-			{isOpenModal &&
-				<div>
-					I am modal.
-				</div>
-			}
-
 			<div className="mt-4 flex flex-col gap-4">
 				{props.tweets.map((tweet) => (
 
@@ -65,6 +59,19 @@ function tweets(props: Props) {
 
 				))}
 			</div>
+
+			{isOpenModal &&
+
+				<div className="z-10 fixed top-0 left-0 w-full h-full flex justify-center items-center">
+
+					<div onClick={() => setIsOpenModal(false)} className="w-full h-full bg-black/40"></div>
+
+					<div className="absolute bg-white p-8 md:width-600 w-11/12 max-height-screen-90 overflow-y-auto">
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil explicabo magnam soluta?</p>
+					</div>
+				</div>
+			}
 		</Layout>
 	)
 }
