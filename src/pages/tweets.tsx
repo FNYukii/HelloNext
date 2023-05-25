@@ -1,25 +1,25 @@
 import Tweet from "@/entities/Tweet"
 import { TweetService } from "@/utilities/TweetService"
 import Head from "next/head"
-import { useEffect, useState } from "react"
 import { BsPersonCircle } from "react-icons/bs"
 
-function tweets() {
+export async function getStaticProps() {
 
-	const [tweets, setTweets] = useState<Tweet[] | null>(null)
-	const [isLoaded, setIsLoaded] = useState(false)
+	const tweets = await TweetService.readTweets()
 
-	async function readTweets() {
+	return {
+		props: {
+			tweets,
+		},
+	};
+}
 
-		const tweets = await TweetService.readTweets()
-		setTweets(tweets)
-		setIsLoaded(true)
-	}
 
-	useEffect(() => {
+interface Props {
+	tweets: Tweet[],
+}
 
-		readTweets()
-	}, [])
+function tweets(props: Props) {
 
 	return (
 		<>
@@ -33,46 +33,26 @@ function tweets() {
 				<h1 className="text-2xl font-bold">Tweets</h1>
 
 				<div className="mt-4">
-					{!isLoaded &&
 
-						<div>
-							<p>ロード中...</p>
-						</div>
-					}
+					<div className="flex flex-col gap-4">
+						{props.tweets.map((tweet) => (
 
-					{isLoaded && tweets === null &&
-						<div>
-							<p>ロード失敗。</p>
-						</div>
-					}
+							<div key={tweet.id} className="p-2 border flex gap-4">
 
-					{isLoaded && tweets !== null && tweets.length === 0 &&
-						<div>
-							<p>ツイートはありません。</p>
-						</div>
-					}
+								<BsPersonCircle className="text-4xl text-gray-500" />
 
-					{isLoaded && tweets !== null &&
-						<div className="flex flex-col gap-4">
-							{tweets.map((tweet) => (
+								<div>
 
-								<div key={tweet.id} className="p-2 border flex gap-4">
-
-									<BsPersonCircle className="text-4xl text-gray-500" />
-
-									<div>
-
-										<div className="flex gap-2">
-											<span className="font-bold">{tweet.displayName}</span>
-											<span className="text-gray-500">{tweet.createdAt.toString()}</span>
-										</div>
-										<p>{tweet.text}</p>
+									<div className="flex gap-2">
+										<span className="font-bold">{tweet.displayName}</span>
+										<span className="text-gray-500">{tweet.createdAt.toString()}</span>
 									</div>
+									<p>{tweet.text}</p>
 								</div>
+							</div>
 
-							))}
-						</div>
-					}
+						))}
+					</div>
 				</div>
 			</main>
 		</>
