@@ -32,27 +32,24 @@ function tweets(props: Props) {
 
 				<h1 className="text-2xl font-bold">Tweets</h1>
 
-				<div className="mt-4">
+				<div className="mt-4 flex flex-col gap-4">
+					{props.tweets.map((tweet) => (
 
-					<div className="flex flex-col gap-4">
-						{props.tweets.map((tweet) => (
+						<div key={tweet.id} className="p-4 flex gap-4 bg-gray-100">
 
-							<div key={tweet.id} className="p-2 border flex gap-4">
+							<BsPersonCircle className="text-4xl text-gray-500" />
 
-								<BsPersonCircle className="text-4xl text-gray-500" />
+							<div>
 
-								<div>
-
-									<div className="flex gap-2">
-										<span className="font-bold">{tweet.displayName}</span>
-										<span className="text-gray-500">{tweet.createdAt.toString()}</span>
-									</div>
-									<p>{tweet.text}</p>
+								<div className="flex gap-2">
+									<span className="font-bold">{tweet.displayName}</span>
+									<span className="text-gray-500">{tweet.createdAt.toString()}</span>
 								</div>
+								<p>{tweet.text}</p>
 							</div>
+						</div>
 
-						))}
-					</div>
+					))}
 				</div>
 			</main>
 		</>
