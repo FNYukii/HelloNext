@@ -1,5 +1,4 @@
 import Tweet from '../entities/Tweet'
-import { collection, query, getDocs } from "firebase/firestore"
 import { db } from "../utilities/admin"
 
 export class TweetService {
