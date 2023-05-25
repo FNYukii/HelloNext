@@ -24,7 +24,7 @@ export default function Home() {
 							<MdOutlineArticle className="text-gray-500 text-4xl"/>
 
 							<span className="mt-2 block text-xl">Posts</span>
-							<p className="text-gray-500">Public Articles rendered by SSG</p>
+							<p className="text-gray-500">Public articles rendered by SSG</p>
 						</div>
 					</Link>
 
@@ -35,7 +35,7 @@ export default function Home() {
 							<MdChecklist className="text-gray-500 text-4xl"/>
 
 							<span className="mt-2 block text-xl">Tweets</span>
-							<p className="text-gray-500">Public tweets rendered by SSR</p>
+							<p className="text-gray-500">Public tweets rendered by SSG</p>
 						</div>
 					</Link>
 
