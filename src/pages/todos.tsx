@@ -1,21 +1,15 @@
-import Head from "next/head"
+import Layout from "@/components/Layout"
 
 function todos() {
-	
+
 	return (
-		<>
 
-			<Head>
-				<title>Todos - Hello Next</title>
-			</Head>
+		<Layout title="Todos">
 
-			<main className="mx-auto w-full lg:width-lg px-4 lg:px-0">
+			<h1 className="text-2xl font-bold">Todos</h1>
 
-				<h1 className="text-2xl font-bold">Todos</h1>
-
-				<p className="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-			</main>
-		</>
+			<p className="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+		</Layout>
 	)
 }
 

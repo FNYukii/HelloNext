@@ -1,24 +1,18 @@
-import Head from "next/head"
+import Layout from "@/components/Layout"
 
 function NotFound() {
-	
+
 	return (
-		<>
 
-			<Head>
-				<title>Page Not Found - Hello Next</title>
-			</Head>
+		<Layout title="404">
+			
+			<h1 className="text-2xl font-bold">Page Not Found</h1>
 
-			<main className="mx-auto w-full lg:width-lg px-4 lg:px-0">
-				
-				<h1 className="text-2xl font-bold">Page Not Found</h1>
+			<div className="mt-4">
 
-				<div className="mt-4">
-
-					<p>Lorem ipsum dolor sit amet consectetur.</p>
-				</div>
-			</main>
-		</>
+				<p>Lorem ipsum dolor sit amet consectetur.</p>
+			</div>
+		</Layout>
 	)
 }
 

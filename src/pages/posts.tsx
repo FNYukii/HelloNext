@@ -1,9 +1,9 @@
-import Head from "next/head"
 import fs from 'fs'
 import matter from 'gray-matter'
 import Link from "next/link"
 import Image from "next/image"
 import Post from "@/entities/Post"
+import Layout from "@/components/Layout"
 
 
 export const getStaticProps = () => {
@@ -47,40 +47,34 @@ interface Props {
 export default function Posts(props: Props) {
 
 	return (
-		<>
+		
+		<Layout title="Posts">
 
-			<Head>
-				<title>Posts - Hello Next</title>
-			</Head>
+			<h1 className="text-2xl font-bold">Posts</h1>
 
-			<main className="mx-auto w-full lg:width-lg px-4 lg:px-0">
+			<div className="mt-4 grid grid-cols-2 sm:grid-cols-3 justify-around gap-y-12 gap-x-4 lg:gap-x-8">
 
-				<h1 className="text-2xl font-bold">Posts</h1>
+				{props.posts.map((post: Post) => (
 
-				<div className="mt-4 grid grid-cols-2 sm:grid-cols-3 justify-around gap-y-12 gap-x-4 lg:gap-x-8">
+					<div key={post.slug}>
 
-					{props.posts.map((post: Post) => (
+						<Link href={`/posts/${post.slug}`} className="transition hover:brightness-90">
 
-						<div key={post.slug}>
+							<Image
+								src={post.frontMatter.thumbnail}
+								width={1200}
+								height={500}
+								alt={`${post.frontMatter.title}の風景`}
+							/>
+						</Link>
 
-							<Link href={`/posts/${post.slug}`} className="transition hover:brightness-90">
-
-								<Image
-									src={post.frontMatter.thumbnail}
-									width={1200}
-									height={500}
-									alt={`${post.frontMatter.title}の風景`}
-								/>
-							</Link>
-
-							<div className="mt-2">
+						<div className="mt-2">
 
 							<Link href={`/posts/${post.slug}`} className="hover:underline">{post.frontMatter.title}</Link>
-							</div>
 						</div>
-					))}
-				</div>
-			</main>
-		</>
+					</div>
+				))}
+			</div>
+		</Layout>
 	)
 }
