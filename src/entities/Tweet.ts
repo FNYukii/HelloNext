@@ -3,7 +3,7 @@ type Tweet = {
 	id: string
 	displayName: string
 	text: string
-	createdAt: Date
+	createdAt: string
 }
 
 export default Tweet
