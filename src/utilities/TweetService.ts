@@ -1,5 +1,5 @@
 import Tweet from '../entities/Tweet'
-import { adminDb } from "../utilities/admin"
+import { adminDb } from "./firebaseAdmin"
 
 export class TweetService {
 
