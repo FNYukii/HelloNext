@@ -24,4 +24,9 @@ export class TweetService {
 
 		return tweets
 	}
+
+	static async createTweet(displayName: string, text: string): Promise<string> {
+
+		return ""
+	}
 }
