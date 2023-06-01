@@ -4,7 +4,6 @@ import { TweetService } from "@/utilities/TweetService"
 import { BsPersonCircle } from "react-icons/bs"
 import { AiOutlinePlus } from "react-icons/ai"
 import { useState } from "react"
-import { MdClose } from "react-icons/md"
 import AddTweetModal from "@/components/AddTweetModal"
 
 export async function getStaticProps() {
