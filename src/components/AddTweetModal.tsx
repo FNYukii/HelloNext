@@ -17,7 +17,7 @@ function AddTweetModal(props: Props) {
 					<MdClose className="text-gray-500 text-3xl hover:opacity-80" />
 				</button>
 
-				<input type="text" placeholder="ツイート" className="w-full py-2 bg-transparent border-b border-gray-300 focus:outline-none focus:border-blue-500 placeholder:text-gray-400" />
+				<input type="text" placeholder="名前" className="w-full py-2 bg-transparent border-b border-gray-300 focus:outline-none focus:border-blue-500 placeholder:text-gray-400" />
 
 				<div className="flex justify-end">
 
