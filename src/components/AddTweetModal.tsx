@@ -11,13 +11,20 @@ function AddTweetModal(props: Props) {
 
 			<div onClick={() => props.setIsOpenModal(false)} className="w-full h-full bg-black/40"></div>
 
-			<div className="absolute bg-white p-8 md:width-600 w-11/12 max-height-screen-90 overflow-y-auto">
+			<div className="absolute bg-white p-8 md:width-600 w-11/12 max-height-screen-90 overflow-y-auto space-y-4">
 
 				<button onClick={() => props.setIsOpenModal(false)}>
 					<MdClose className="text-gray-500 text-3xl hover:opacity-80" />
 				</button>
 
-				<input type="text" placeholder="ツイート" className="mt-4 w-full py-2 bg-transparent border-b border-gray-300 focus:outline-none focus:border-blue-500 placeholder:text-gray-400" />
+				<input type="text" placeholder="ツイート" className="w-full py-2 bg-transparent border-b border-gray-300 focus:outline-none focus:border-blue-500 placeholder:text-gray-400" />
+
+				<div className="flex justify-end">
+
+					<button className="py-2 px-4 bg-black text-white hover:opacity-80">
+						<span>投稿</span>
+					</button>
+				</div>
 			</div>
 		</div>
 	);
