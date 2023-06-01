@@ -2,6 +2,9 @@ import Layout from "@/components/Layout"
 import Tweet from "@/entities/Tweet"
 import { TweetService } from "@/utilities/TweetService"
 import { BsPersonCircle } from "react-icons/bs"
+import { AiOutlinePlus } from "react-icons/ai"
+import { useState } from "react"
+import AddTweetModal from "@/components/AddTweetModal"
 
 export async function getStaticProps() {
 
@@ -19,13 +22,24 @@ interface Props {
 	tweets: Tweet[],
 }
 
-function tweets(props: Props) {
+function Tweets(props: Props) {
+
+	const [isOpenModal, setIsOpenModal] = useState(false)
 
 	return (
 
 		<Layout title="Tweets">
 
-			<h1 className="text-2xl font-bold">Tweets</h1>
+			<div className="flex justify-between items-center">
+
+				<h1 className="text-2xl font-bold">Tweets</h1>
+
+				<button onClick={() => setIsOpenModal(true)} className="flex items-center gap-2 hover:opacity-60 transition">
+
+					<AiOutlinePlus className="text-xl" />
+					<span>New Tweet</span>
+				</button>
+			</div>
 
 			<div className="mt-4 flex flex-col gap-4">
 				{props.tweets.map((tweet) => (
@@ -46,8 +60,12 @@ function tweets(props: Props) {
 
 				))}
 			</div>
+
+			{isOpenModal &&
+				<AddTweetModal setIsOpenModal={setIsOpenModal}/>
+			}
 		</Layout>
 	)
 }
 
-export default tweets
+export default Tweets
