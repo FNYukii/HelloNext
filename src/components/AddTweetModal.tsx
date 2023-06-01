@@ -17,7 +17,7 @@ function AddTweetModal(props: Props) {
 					<MdClose className="text-gray-500 text-3xl hover:opacity-80" />
 				</button>
 
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil explicabo magnam soluta?</p>
+				<input type="text" placeholder="ツイート" className="mt-4 w-full py-2 bg-transparent border-b border-gray-300 focus:outline-none focus:border-blue-500 placeholder:text-gray-400" />
 			</div>
 		</div>
 	);
