@@ -1,7 +1,9 @@
 import { MdClose } from "react-icons/md";
 import DynamicTextarea from "./DynamicTextarea";
 import { useEffect, useState } from "react";
-import TweetService from "@/utilities/TweetService";
+
+import { addDoc, collection, serverTimestamp } from "firebase/firestore"
+import { db } from "@/utilities/firebase"
 
 interface Props {
 	setIsOpenModal: React.Dispatch<React.SetStateAction<boolean>>
@@ -25,7 +27,25 @@ function AddTweetModal(props: Props) {
 
 	async function addTweet() {
 
-		// const id = await TweetService.createTweet(displayName, text)
+		try {
+
+			const ref = await addDoc(collection(db, "tweets"), {
+
+				createdAt: serverTimestamp(),
+				displayName: displayName,
+				text: text
+			})
+
+			const tweetId = ref.id
+
+			alert("Y")
+
+		} catch (error) {
+
+			alert("N")
+
+			console.log(`Failed to tweet creation. ${error}`)
+		}
 	}
 
 	return (
