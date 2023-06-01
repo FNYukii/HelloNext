@@ -1,6 +1,6 @@
 import { MdClose } from "react-icons/md";
 import DynamicTextarea from "./DynamicTextarea";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Props {
 	setIsOpenModal: React.Dispatch<React.SetStateAction<boolean>>
@@ -9,6 +9,17 @@ interface Props {
 function AddTweetModal(props: Props) {
 
 	const [text, setText] = useState("")
+
+	useEffect(() => {
+		document.addEventListener("keydown", onKeyDown, false)
+	}, [])
+
+	const onKeyDown = (event: KeyboardEvent) => {
+
+		if (event.key === "Escape") {
+			props.setIsOpenModal(false)
+		}
+	}
 
 	return (
 		<div className="z-10 fixed top-0 left-0 w-full h-full flex justify-center items-center">
