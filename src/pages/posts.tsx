@@ -44,7 +44,7 @@ interface Props {
 	posts: Post[],
 }
 
-export default function posts(props: Props) {
+export default function Posts(props: Props) {
 
 	return (
 		

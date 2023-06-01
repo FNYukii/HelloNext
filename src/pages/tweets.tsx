@@ -22,7 +22,7 @@ interface Props {
 	tweets: Tweet[],
 }
 
-function tweets(props: Props) {
+function Tweets(props: Props) {
 
 	const [isOpenModal, setIsOpenModal] = useState(false)
 
@@ -68,4 +68,4 @@ function tweets(props: Props) {
 	)
 }
 
-export default tweets
+export default Tweets

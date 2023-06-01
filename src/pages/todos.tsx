@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout"
 
-function todos() {
+function Todos() {
 
 	return (
 
@@ -13,4 +13,4 @@ function todos() {
 	)
 }
 
-export default todos
+export default Todos
