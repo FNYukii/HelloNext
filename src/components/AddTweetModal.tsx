@@ -1,10 +1,14 @@
 import { MdClose } from "react-icons/md";
+import DynamicTextarea from "./DynamicTextarea";
+import { useState } from "react";
 
 interface Props {
 	setIsOpenModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 function AddTweetModal(props: Props) {
+
+	const [text, setText] = useState("")
 
 	return (
 		<div className="z-10 fixed top-0 left-0 w-full h-full flex justify-center items-center">
@@ -18,6 +22,8 @@ function AddTweetModal(props: Props) {
 				</button>
 
 				<input type="text" placeholder="名前" className="w-full py-2 bg-transparent border-b border-gray-300 focus:outline-none focus:border-blue-500 placeholder:text-gray-400" />
+
+				<DynamicTextarea value={text} setValue={setText} placeholder="ツイート" className="mt-3 w-full py-2 bg-transparent border-b border-gray-300 focus:outline-none focus:border-blue-500 placeholder:text-gray-400" />
 
 				<div className="flex justify-end">
 
