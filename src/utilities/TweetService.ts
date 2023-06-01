@@ -1,5 +1,5 @@
 import Tweet from '../entities/Tweet'
-import { db } from "../utilities/admin"
+import { adminDb } from "../utilities/admin"
 
 export class TweetService {
 
@@ -7,7 +7,7 @@ export class TweetService {
 
 		const tweets: Tweet[] = [];
 
-		const ref = await db.collection('tweets').get();
+		const ref = await adminDb.collection('tweets').get();
 
 		ref.docs.map((doc) => {
 
