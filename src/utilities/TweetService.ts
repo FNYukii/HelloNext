@@ -1,10 +1,9 @@
 import Tweet from '../entities/Tweet'
 import { adminDb } from "./firebaseAdmin"
 import { db } from "./firebase"
-import { addDoc, collection, deleteDoc, doc, endAt, getDocFromCache, getDocFromServer, getDocs, getDocsFromCache, getDocsFromServer, limit, orderBy, query, QueryDocumentSnapshot, serverTimestamp, startAt, where } from "firebase/firestore"
-import { strict } from 'assert';
+import { addDoc, collection, serverTimestamp } from "firebase/firestore"
 
-export class TweetService {
+export default class TweetService {
 
 	static async readTweets(): Promise<Tweet[]> {
 
@@ -23,7 +22,6 @@ export class TweetService {
 			const tweet: Tweet = { id: id, displayName: displayName, text: text, createdAt: createdAt.toString() }
 			tweets.push(tweet);
 		});
-
 
 		return tweets
 	}

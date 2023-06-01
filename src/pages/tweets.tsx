@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout"
 import Tweet from "@/entities/Tweet"
-import { TweetService } from "@/utilities/TweetService"
+import TweetService from "@/utilities/TweetService"
 import { BsPersonCircle } from "react-icons/bs"
 import { AiOutlinePlus } from "react-icons/ai"
 import { useState } from "react"
