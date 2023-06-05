@@ -2,7 +2,10 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { firestore } from 'firebase-admin';
 import { adminDb } from '@/utilities/firebaseAdmin';
 
-async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+	req: NextApiRequest,
+	res: NextApiResponse
+) {
 	
 	if (req.method === 'POST') {
 
@@ -33,5 +36,3 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
 	res.status(200);
 }
-
-export default handler
