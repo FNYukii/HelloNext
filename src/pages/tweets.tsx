@@ -2,7 +2,7 @@ import Layout from "@/components/Layout"
 import Tweet from "@/entities/Tweet"
 import TweetService from "@/utilities/TweetService"
 import { BsPersonCircle } from "react-icons/bs"
-import { AiOutlinePlus } from "react-icons/ai"
+import { AiOutlinePlus, AiOutlineReload } from "react-icons/ai"
 import { useState } from "react"
 import AddTweetModal from "@/components/AddTweetModal"
 
@@ -34,11 +34,20 @@ function Tweets(props: Props) {
 
 				<h1 className="text-2xl font-bold">Tweets</h1>
 
-				<button onClick={() => setIsOpenModal(true)} className="flex items-center gap-2 hover:opacity-60 transition">
+				<div className="flex gap-8">
 
-					<AiOutlinePlus className="text-xl" />
-					<span>New Tweet</span>
-				</button>
+					<button className="flex items-center gap-2 hover:opacity-60 transition">
+
+						<AiOutlineReload className="text-xl" />
+						<span>Reload</span>
+					</button>
+
+					<button onClick={() => setIsOpenModal(true)} className="flex items-center gap-2 hover:opacity-60 transition">
+
+						<AiOutlinePlus className="text-xl" />
+						<span>New Tweet</span>
+					</button>
+				</div>
 			</div>
 
 			<div className="mt-4 flex flex-col gap-4">
@@ -62,7 +71,7 @@ function Tweets(props: Props) {
 			</div>
 
 			{isOpenModal &&
-				<AddTweetModal setIsOpenModal={setIsOpenModal}/>
+				<AddTweetModal setIsOpenModal={setIsOpenModal} />
 			}
 		</Layout>
 	)
