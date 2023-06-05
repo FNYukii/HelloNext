@@ -28,6 +28,8 @@ function AddTweetModal(props: Props) {
 			displayName: displayName,
 			text: text
 		});
+
+		props.setIsOpenModal(false)
 	};
 
 	return (

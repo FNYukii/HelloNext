@@ -6,13 +6,24 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 	
 	if (req.method === 'POST') {
 
+		const displayName: string = req.body.displayName ?? ""
+		const text: string = req.body.text ?? ""
+
+		if (displayName === "" || displayName.length > 30) {
+			return
+		}
+
+		if (text === "" || text.length > 100) {
+			return
+		}
+
 		// データを追加
 		const docRef = adminDb.collection("tweets").doc();
 
 		const insertData = {
 			createdAt: firestore.FieldValue.serverTimestamp(),
-			displayName: req.body.displayName,
-			text: req.body.text
+			displayName: displayName,
+			text: text
 		};
 
 		docRef.set(insertData);
