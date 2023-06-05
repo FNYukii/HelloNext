@@ -2,9 +2,6 @@ import Tweet from '../entities/Tweet'
 
 import { adminDb } from "./firebaseAdmin"
 
-import { db } from "./firebase"
-import { addDoc, collection, serverTimestamp } from "firebase/firestore"
-
 export default class TweetService {
 
 	static async readTweets(): Promise<Tweet[]> {
@@ -26,35 +23,5 @@ export default class TweetService {
 		});
 
 		return tweets
-	}
-
-	static async createTweet(displayName: string, text: string): Promise<string | null> {
-
-		// displayNameのチェック
-		if (displayName.length === 0 || displayName.length > 30) {
-			return null
-		}
-
-		// textのチェック
-		if (text.length === 0 || text.length > 100) {
-			return null
-		}
-
-		try {
-
-			const ref = await addDoc(collection(db, "tweets"), {
-
-				createdAt: serverTimestamp(),
-				displayName: displayName,
-				text: text
-			})
-
-			return ref.id
-
-		} catch (error) {
-
-			console.log(`Failed to tweet creation. ${error}`)
-			return null
-		}
 	}
 }

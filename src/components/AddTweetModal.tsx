@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import { addDoc, collection, serverTimestamp } from "firebase/firestore"
 import { db } from "@/utilities/firebase"
+import axios from "axios";
 
 interface Props {
 	setIsOpenModal: React.Dispatch<React.SetStateAction<boolean>>
@@ -25,30 +26,34 @@ function AddTweetModal(props: Props) {
 		}
 	}
 
-	async function addTweet() {
+	// async function addTweet() {
 
-		console.log("onClick")
+	// 	console.log("onClick")
 
-		try {
+	// 	try {
 
-			console.log("onTry")
+	// 		console.log("onTry")
 
-			const ref = await addDoc(collection(db, "tweets"), {
+	// 		const ref = await addDoc(collection(db, "tweets"), {
 
-				createdAt: serverTimestamp(),
-				displayName: displayName,
-				text: text
-			})
+	// 			createdAt: serverTimestamp(),
+	// 			displayName: displayName,
+	// 			text: text
+	// 		})
 
-			const tweetId = ref.id
+	// 		const tweetId = ref.id
 
-			console.log("Success! Added new tweet.")
+	// 		console.log("Success! Added new tweet.")
 
-		} catch (error) {
+	// 	} catch (error) {
 
-			console.log(`Fail! Error to tweet creation. ${error}`)
-		}
-	}
+	// 		console.log(`Fail! Error to tweet creation. ${error}`)
+	// 	}
+	// }
+
+	const insertUser = async () => {
+    await axios.post('/api/tweet');
+  };
 
 	return (
 		<div className="z-10 fixed top-0 left-0 w-full h-full flex justify-center items-center">
@@ -67,7 +72,7 @@ function AddTweetModal(props: Props) {
 
 				<div className="flex justify-end">
 
-					<button onClick={addTweet} className="py-2 px-4 bg-black text-white hover:opacity-60 transition">
+					<button onClick={insertUser} className="py-2 px-4 bg-black text-white hover:opacity-60 transition">
 						<span>投稿</span>
 					</button>
 				</div>
