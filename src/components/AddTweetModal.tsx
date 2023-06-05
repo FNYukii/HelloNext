@@ -1,9 +1,6 @@
 import { MdClose } from "react-icons/md";
 import DynamicTextarea from "./DynamicTextarea";
 import { useEffect, useState } from "react";
-
-import { addDoc, collection, serverTimestamp } from "firebase/firestore"
-import { db } from "@/utilities/firebase"
 import axios from "axios";
 
 interface Props {
@@ -25,31 +22,6 @@ function AddTweetModal(props: Props) {
 			props.setIsOpenModal(false)
 		}
 	}
-
-	// async function addTweet() {
-
-	// 	console.log("onClick")
-
-	// 	try {
-
-	// 		console.log("onTry")
-
-	// 		const ref = await addDoc(collection(db, "tweets"), {
-
-	// 			createdAt: serverTimestamp(),
-	// 			displayName: displayName,
-	// 			text: text
-	// 		})
-
-	// 		const tweetId = ref.id
-
-	// 		console.log("Success! Added new tweet.")
-
-	// 	} catch (error) {
-
-	// 		console.log(`Fail! Error to tweet creation. ${error}`)
-	// 	}
-	// }
 
 	const insertUser = async () => {
     await axios.post('/api/tweet');
