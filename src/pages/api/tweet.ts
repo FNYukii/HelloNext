@@ -6,9 +6,11 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 	
 	if (req.method === 'POST') {
 
+		// bodyからdisplayNameとtextの値を取り出す
 		const displayName: string = req.body.displayName ?? ""
 		const text: string = req.body.text ?? ""
 
+		// 入力値チェック
 		if (displayName === "" || displayName.length > 30) {
 			return
 		}
