@@ -27,7 +27,11 @@ function AddTweetModal(props: Props) {
 
 	async function addTweet() {
 
+		console.log("onClick")
+
 		try {
+
+			console.log("onTry")
 
 			const ref = await addDoc(collection(db, "tweets"), {
 
@@ -38,13 +42,11 @@ function AddTweetModal(props: Props) {
 
 			const tweetId = ref.id
 
-			alert("Y")
+			console.log("Success! Added new tweet.")
 
 		} catch (error) {
 
-			alert("N")
-
-			console.log(`Failed to tweet creation. ${error}`)
+			console.log(`Fail! Error to tweet creation. ${error}`)
 		}
 	}
 
