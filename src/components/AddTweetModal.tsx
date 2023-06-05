@@ -25,8 +25,8 @@ function AddTweetModal(props: Props) {
 
 	const insertUser = async () => {
 		await axios.post('/api/tweet', {
-			displayName: 'Fred',
-			text: 'Flintstone'
+			displayName: displayName,
+			text: text
 		});
 	};
 

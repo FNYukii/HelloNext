@@ -3,7 +3,7 @@ import { firestore } from 'firebase-admin';
 import { adminDb } from '@/utilities/firebaseAdmin';
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-
+	
 	if (req.method === 'POST') {
 
 		// データを追加
@@ -11,8 +11,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
 		const insertData = {
 			createdAt: firestore.FieldValue.serverTimestamp(),
-			displayName: "Ayato",
-			text: "Hello"
+			displayName: req.body.displayName,
+			text: req.body.text
 		};
 
 		docRef.set(insertData);
