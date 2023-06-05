@@ -1,13 +1,14 @@
 import Tweet from '../entities/Tweet'
-import { db } from "../utilities/admin"
 
-export class TweetService {
+import { adminDb } from "./firebaseAdmin"
+
+export default class TweetService {
 
 	static async readTweets(): Promise<Tweet[]> {
 
 		const tweets: Tweet[] = [];
 
-		const ref = await db.collection('tweets').get();
+		const ref = await adminDb.collection('tweets').get();
 
 		ref.docs.map((doc) => {
 
@@ -20,7 +21,6 @@ export class TweetService {
 			const tweet: Tweet = { id: id, displayName: displayName, text: text, createdAt: createdAt.toString() }
 			tweets.push(tweet);
 		});
-
 
 		return tweets
 	}
