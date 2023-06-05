@@ -24,8 +24,11 @@ function AddTweetModal(props: Props) {
 	}
 
 	const insertUser = async () => {
-    await axios.post('/api/tweet');
-  };
+		await axios.post('/api/tweet', {
+			displayName: 'Fred',
+			text: 'Flintstone'
+		});
+	};
 
 	return (
 		<div className="z-10 fixed top-0 left-0 w-full h-full flex justify-center items-center">
