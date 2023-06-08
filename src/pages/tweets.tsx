@@ -6,15 +6,15 @@ import { AiOutlinePlus, AiOutlineReload } from "react-icons/ai"
 import { useState } from "react"
 import AddTweetModal from "@/components/AddTweetModal"
 
-export async function getStaticProps() {
-
+export async function getServerSideProps() {
+	
 	const tweets = await TweetService.readTweets()
 
 	return {
 		props: {
 			tweets,
 		},
-	};
+	}; 
 }
 
 
