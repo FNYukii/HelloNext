@@ -66,7 +66,6 @@ function Tweets(props: Props) {
 							<p>{tweet.text}</p>
 						</div>
 					</div>
-
 				))}
 			</div>
 
