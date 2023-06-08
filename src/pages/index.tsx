@@ -30,7 +30,7 @@ export default function Home() {
 						<MdChecklist className="text-gray-500 text-4xl" />
 
 						<span className="mt-2 block text-xl">Tweets</span>
-						<p className="text-gray-500">Public tweets rendered by SSG</p>
+						<p className="text-gray-500">Public tweets rendered by SSR</p>
 					</div>
 				</Link>
 
