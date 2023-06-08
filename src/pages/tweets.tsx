@@ -36,7 +36,7 @@ function Tweets(props: Props) {
 
 				<div className="flex gap-8">
 
-					<button className="flex items-center gap-2 hover:opacity-60 transition">
+					<button onClick={() => location.reload()} className="flex items-center gap-2 hover:opacity-60 transition">
 
 						<AiOutlineReload className="text-xl" />
 						<span>Reload</span>
@@ -66,7 +66,6 @@ function Tweets(props: Props) {
 							<p>{tweet.text}</p>
 						</div>
 					</div>
-
 				))}
 			</div>
 
