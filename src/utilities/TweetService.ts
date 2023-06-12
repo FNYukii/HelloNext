@@ -8,7 +8,7 @@ export default class TweetService {
 
 		const tweets: Tweet[] = [];
 
-		const ref = await adminDb.collection('tweets').get();
+		const ref = await adminDb.collection('tweets').orderBy('createdAt', "desc").get();
 
 		ref.docs.map((doc) => {
 
