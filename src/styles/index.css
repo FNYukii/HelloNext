@@ -4,25 +4,29 @@
 
 @layer components {
 
-  .width-xl {
-    width: 1280px;
-  }
+	.width-xl {
+		width: 1280px;
+	}
 
-  .width-lg {
-    width: 1024px;
-  }
+	.width-lg {
+		width: 1024px;
+	}
 
-  .width-md {
-    width: 768px;
-  }
+	.width-md {
+		width: 768px;
+	}
 
-  .width-sm {
-    width: 640px;
-  }
+	.width-sm {
+		width: 640px;
+	}
 
 	.width-600 {
 		width: 600px;
+	}
 }
+
+.markdown {
+	@apply w-full md:width-md mx-auto
 }
 
 .markdown h2 {
