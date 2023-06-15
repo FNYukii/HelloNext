@@ -9,7 +9,6 @@ function Todos() {
 	const [isLoaded, setIsLoades] = useState(false)
 
 	async function read() {
-		console.log("hello");
 
 		// record一覧を読み取り
 		const todos: Todo[] | null = await TodoService.readTodos()
