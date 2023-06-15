@@ -38,9 +38,12 @@ function Todos() {
 
 
 				{isLoaded && todos !== null && todos.length !== 0 &&
-					<div>
+
+					<div className="mt-4 flex flex-col gap-4">
+
 						{todos.map(todo => (
-							<div key={todo.id}>
+
+							<div key={todo.id} className="p-4 bg-gray-100">
 								<p>{todo.text}</p>
 							</div>
 						))}
