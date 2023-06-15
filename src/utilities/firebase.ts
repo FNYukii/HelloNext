@@ -1,8 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getFirestore } from "firebase/firestore"
 
-console.log(`api: ${process.env.REACT_APP_API_KEY}`)
-
 // .envファイルに書いてある環境変数を元に、Firebaseプロジェクトの構成情報をまとめる
 const firebaseConfig = {
 	apiKey: process.env.NEXT_PUBLIC_API_KEY,
