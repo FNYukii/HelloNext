@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app'
-import { initializeFirestore, persistentLocalCache, persistentMultipleTabManager } from "firebase/firestore"
+import { getFirestore } from "firebase/firestore"
 
 // .envファイルに書いてある環境変数を元に、Firebaseプロジェクトの構成情報をまとめる
 const firebaseConfig = {
@@ -15,10 +15,13 @@ const firebaseConfig = {
 // 構成情報を元に、Firebaseを初期化
 const app = initializeApp(firebaseConfig)
 
+
 // キャッシュ読み取りを有効にした上で、Cloud Firestoreサービスへの参照を取得
-const db = initializeFirestore(app, {
-	localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager() })
-})
+// const db = initializeFirestore(app, {
+// 	localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager() })
+// })
+
+const db = getFirestore(app)
 
 // データベースへの参照をエクスポート
 export { db }

@@ -4,7 +4,7 @@ import { query, collection, orderBy, limit, getDocs } from 'firebase/firestore'
 
 export default class TodoService {
 
-	static async readTodos(): Promise<Todo[]> {
+	static async readTodos(): Promise<Todo[] | null> {
 
 		// Firestoreへの読み取りクエリを用意しておく
 		const q = query(
