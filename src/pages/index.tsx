@@ -41,7 +41,7 @@ export default function Home() {
 						<MdChecklist className="text-gray-500 text-4xl" />
 
 						<span className="mt-2 block text-2xl">Todos</span>
-						<p className="mt-2 text-gray-500">非公開のTodoをSSGとFirebase SDKで表示します。<br/>ビルド時に生成したWebページをリクエストのたびにクライアントに返し、クライアント上でデータを読み書きします。</p>
+						<p className="mt-2 text-gray-500">非公開のTodoをSSGとFirebase JavaScript SDKで表示します。<br/>ビルド時に生成したWebページをリクエストのたびにクライアントに返し、クライアント上でデータを読み書きします。</p>
 					</div>
 				</Link>
 			</div>

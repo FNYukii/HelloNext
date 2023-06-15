@@ -57,12 +57,13 @@ function Tweets(props: Props) {
 
 						<BsPersonCircle className="text-4xl text-gray-500" />
 
-						<div>
+						<div className="space-y-1">
 
-							<div className="flex gap-2">
+							<div className="space-x-2">
 								<span className="font-bold">{tweet.displayName}</span>
 								<span className="text-gray-500">{tweet.createdAt.toString()}</span>
 							</div>
+
 							<p>{tweet.text}</p>
 						</div>
 					</div>
