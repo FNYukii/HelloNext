@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout"
 import Link from "next/link"
-import { MdChecklist, MdOutlineArticle } from "react-icons/md"
+import { MdChecklist, MdOutlineArticle, MdOutlineComment } from "react-icons/md"
 
 export default function Home() {
 
@@ -27,7 +27,7 @@ export default function Home() {
 
 					<div className="border p-4">
 
-						<MdChecklist className="text-gray-500 text-4xl" />
+						<MdOutlineComment className="text-gray-500 text-4xl" />
 
 						<span className="mt-2 block text-2xl">Tweets</span>
 						<p className="mt-2 text-gray-500">公開されたつぶやきをSSRとFirebase Admin SDKで表示します。<br/>リクエスト時にCloud Firestoreのデータを読み取ってWebページを生成し、クライアントに返しています。</p>
