@@ -43,8 +43,9 @@ function Todos() {
 
 						{todos.map(todo => (
 
-							<div key={todo.id} className="p-4 bg-gray-100">
+							<div key={todo.id} className="p-4 bg-gray-100 space-y-2">
 								<p>{todo.text}</p>
+								<p className="text-gray-500">{todo.createdAt.toString()}</p>
 							</div>
 						))}
 					</div>
