@@ -25,7 +25,7 @@ function TodosSection() {
 
 		<div>
 
-			<div className="flex justify-between">
+			<div className="flex justify-between items-center">
 				<h1 className="text-2xl font-bold">Todos</h1>
 				<button onClick={() => AuthService.signOut()} className="font-bold">Sign out</button>
 			</div>
