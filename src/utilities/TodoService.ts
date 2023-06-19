@@ -1,14 +1,18 @@
 import Todo from '@/entities/Todo'
 import { db } from "./firebase"
-import { query, collection, orderBy, limit, getDocs } from 'firebase/firestore'
+import { query, collection, orderBy, limit, getDocs, where } from 'firebase/firestore'
+import AuthService from './AuthService'
 
 export default class TodoService {
 
 	static async readTodos(): Promise<Todo[] | null> {
 
+		const userId = await AuthService.uid()
+
 		// Firestoreへの読み取りクエリを用意しておく
 		const q = query(
 			collection(db, "todos"),
+			where("userId", "==", userId),
 			orderBy("createdAt", "desc"),
 			limit(100)
 		)
