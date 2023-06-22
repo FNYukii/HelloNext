@@ -1,6 +1,6 @@
 import Todo from '@/entities/Todo'
 import { db } from "./firebase"
-import { query, collection, orderBy, limit, getDocs, where } from 'firebase/firestore'
+import { query, collection, orderBy, limit, getDocs, where, addDoc, serverTimestamp } from 'firebase/firestore'
 import AuthService from './AuthService'
 
 export default class TodoService {
@@ -54,6 +54,33 @@ export default class TodoService {
 			// 失敗の場合
 			// ログ出力して、nullを返す
 			console.log(`FAIL! Error reading todos. ${error}`)
+			return null
+		}
+	}
+
+	static async createTodo(text: string): Promise<string | null> {
+
+		// 文字数チェック
+		if (text.length === 0 || text.length > 100) {
+			return
+		}
+
+		// UID取得
+		const userId = await AuthService.uid()
+
+		try {
+
+			const ref = await addDoc(collection(db, "todos"), {
+				createdAt: serverTimestamp(),
+				userId: userId,
+				text: text
+			})
+
+			return ref.id
+
+		} catch (error) {
+
+			console.log(`Failed to comment creation. ${error}`)
 			return null
 		}
 	}
