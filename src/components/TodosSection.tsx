@@ -26,10 +26,15 @@ function TodosSection() {
 		<div>
 
 			<div className="flex justify-between items-center">
-				<h1 className="text-2xl font-bold">Todos</h1>
-				<button onClick={() => AuthService.signOut()} className="font-bold">Sign out</button>
-			</div>
 
+				<h1 className="text-2xl font-bold">Todos</h1>
+
+				<div className="flex gap-4">
+
+					<button className="font-bold hover:opacity-60 transition">New Todo</button>
+					<button onClick={() => AuthService.signOut()} className="font-bold text-red-500 hover:opacity-60 transition">Sign out</button>
+				</div>
+			</div>
 
 			<div>
 				{!isLoaded &&
