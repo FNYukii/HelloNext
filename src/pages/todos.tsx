@@ -42,8 +42,8 @@ function Todos() {
 
 					<h1 className="text-2xl font-bold">Todos</h1>
 
-					<p>You are not signed in. Please sign in to use Todo List.</p>
-					<button onClick={() => AuthService.signInWithGoogle()} className="font-bold">Sign in with Google</button>
+					<p className="mt-4">You are not signed in. Please sign in to use Todo List.</p>
+					<button onClick={() => AuthService.signInWithGoogle()} className="mt-4 font-bold hover:opacity-60 transition">Sign in with Google</button>
 				</div>
 			}
 
