@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import { MdOutlineClose } from "react-icons/md";
 import DynamicTextarea from "./DynamicTextarea";
+import TodoService from "@/utilities/TodoService";
 
 interface Props {
 	setIsShowModal: Dispatch<SetStateAction<boolean>>
@@ -9,6 +10,17 @@ interface Props {
 function AddTodoModal(props: Props) {
 
 	const [text, setText] = useState("")
+
+	const insert = async () => {
+
+		const todoId = await TodoService.createTodo(text)
+
+		if (todoId === null) {
+			return
+		}
+
+		props.setIsShowModal(false)
+	};
 
 	return (
 
@@ -33,7 +45,7 @@ function AddTodoModal(props: Props) {
 
 					<div className="mt-4 mb-8 flex justify-end">
 
-						<button className="py-2 px-4 bg-black text-white hover:opacity-60 transition">追加</button>
+						<button onClick={insert} className="py-2 px-4 bg-black text-white hover:opacity-60 transition">追加</button>
 					</div>
 				</div>
 			</div>
