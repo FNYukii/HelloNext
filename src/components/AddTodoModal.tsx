@@ -1,11 +1,14 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { MdOutlineClose } from "react-icons/md";
+import DynamicTextarea from "./DynamicTextarea";
 
 interface Props {
 	setIsShowModal: Dispatch<SetStateAction<boolean>>
 }
 
 function AddTodoModal(props: Props) {
+
+	const [text, setText] = useState("")
 
 	return (
 
@@ -25,6 +28,13 @@ function AddTodoModal(props: Props) {
 				<div className="px-8">
 
 					<h1 className="mt-4 text-2xl font-bold">新規Todo</h1>
+
+					<DynamicTextarea value={text} setValue={setText} placeholder="やること" className="mt-4 w-full py-2 bg-transparent border-b border-zinc-300 dark:border-zinc-600 focus:outline-none focus:border-blue-500 placeholder:text-zinc-400 dark:placeholder:text-zinc-600" />
+
+					<div className="mt-4 mb-8 flex justify-end">
+
+						<button className="py-2 px-4 bg-black text-white hover:opacity-60 transition">追加</button>
+					</div>
 				</div>
 			</div>
 		</div>
