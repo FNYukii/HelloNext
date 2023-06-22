@@ -2,11 +2,15 @@ import Todo from "@/entities/Todo";
 import AuthService from "@/utilities/AuthService";
 import TodoService from "@/utilities/TodoService";
 import { useState, useEffect } from "react";
+import { MdOutlineClose } from "react-icons/md";
+import AddTodoModal from "./AddTodoModal";
 
 function TodosSection() {
 
 	const [todos, setTodos] = useState<Todo[] | null>(null)
 	const [isLoaded, setIsLoades] = useState(false)
+
+	const [isShowModal, setIsShowModal] = useState(false)
 
 	async function read() {
 
@@ -25,18 +29,26 @@ function TodosSection() {
 
 		<div>
 
-			<div className="flex justify-between items-center">
+			<section className="flex justify-between items-center">
 
 				<h1 className="text-2xl font-bold">Todos</h1>
 
 				<div className="flex gap-4">
 
-					<button className="font-bold hover:opacity-60 transition">New Todo</button>
+					<button onClick={() => setIsShowModal(true)} className="font-bold hover:opacity-60 transition">New Todo</button>
 					<button onClick={() => AuthService.signOut()} className="font-bold text-red-500 hover:opacity-60 transition">Sign out</button>
 				</div>
-			</div>
+			</section>
 
-			<div>
+			<section>
+
+				{isShowModal &&
+
+					<AddTodoModal setIsShowModal={setIsShowModal} />
+				}
+			</section>
+
+			<section>
 				{!isLoaded &&
 					<p>Loading ...</p>
 				}
@@ -59,7 +71,7 @@ function TodosSection() {
 						))}
 					</div>
 				}
-			</div>
+			</section>
 		</div>
 	)
 }
