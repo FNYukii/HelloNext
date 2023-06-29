@@ -7,14 +7,14 @@ import { useState } from "react"
 import AddTweetModal from "@/components/AddTweetModal"
 
 export async function getServerSideProps() {
-	
+
 	const tweets = await TweetService.readTweets()
 
 	return {
 		props: {
 			tweets,
 		},
-	}; 
+	};
 }
 
 
@@ -50,25 +50,33 @@ function Tweets(props: Props) {
 				</div>
 			</div>
 
-			<div className="mt-4 flex flex-col gap-4">
-				{props.tweets.map((tweet) => (
+			<section>
+				{props.tweets.length === 0 &&
+					<p className="mt-4">There are no tweets.</p>
+				}
 
-					<div key={tweet.id} className="p-4 flex gap-4 bg-gray-100">
+				{props.tweets.length !== 0 &&
+					<div className="mt-4 flex flex-col gap-4">
+						{props.tweets.map((tweet) => (
 
-						<BsPersonCircle className="text-4xl text-gray-500" />
+							<div key={tweet.id} className="p-4 flex gap-4 bg-gray-100">
 
-						<div className="space-y-1">
+								<BsPersonCircle className="text-4xl text-gray-500" />
 
-							<div className="space-x-2">
-								<span className="font-bold">{tweet.displayName}</span>
-								<span className="text-gray-500">{tweet.createdAt.toString()}</span>
+								<div className="space-y-1">
+
+									<div className="space-x-2">
+										<span className="font-bold">{tweet.displayName}</span>
+										<span className="text-gray-500">{tweet.createdAt.toString()}</span>
+									</div>
+
+									<p>{tweet.text}</p>
+								</div>
 							</div>
-
-							<p>{tweet.text}</p>
-						</div>
+						))}
 					</div>
-				))}
-			</div>
+				}
+			</section>
 
 			{isOpenModal &&
 				<AddTweetModal setIsOpenModal={setIsOpenModal} />
