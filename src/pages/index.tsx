@@ -12,36 +12,39 @@ export default function Home() {
 
 			<div className="mt-4 grid grid-cols-2 gap-4">
 
-				<Link href="/posts" className="hover:bg-gray-100 transition">
+				<Link href="/posts" className="h-fit hover:bg-gray-100 transition">
 
 					<div className="border p-4">
 
 						<MdOutlineArticle className="text-gray-500 text-4xl" />
 
 						<span className="mt-2 block text-2xl">Posts</span>
-						<p className="mt-2 text-gray-500">公開された記事をSSGで表示します。<br/>ビルド時にサーバー側でMarkdownからWebページを生成し、リクエストのたびにクライアントへ返しています。</p>
+						<p className="mt-2 text-gray-500">公開された記事をSSGで表示します。</p>
+						<p className="mt-1 text-gray-500">ビルド時にサーバー側でMarkdownファイルからWebページを生成し、リクエストのたびにクライアントへ返しています。</p>
 					</div>
 				</Link>
 
-				<Link href="/tweets" className="hover:bg-gray-100 transition">
+				<Link href="/tweets" className="h-fit hover:bg-gray-100 transition">
 
 					<div className="border p-4">
 
 						<MdOutlineComment className="text-gray-500 text-4xl" />
 
 						<span className="mt-2 block text-2xl">Tweets</span>
-						<p className="mt-2 text-gray-500">公開されたつぶやきをSSRとFirebase Admin SDKで表示します。<br/>リクエスト時にCloud Firestoreのデータを読み取ってWebページを生成し、クライアントに返しています。</p>
+						<p className="mt-2 text-gray-500">公開されたツイートをSSRで表示します。</p>
+						<p className="mt-1 text-gray-500">リクエスト時にサーバー側でCloud Firestoreのデータを一度読み取ってWebページを生成します。そしてクライアント側ではリアルタイムアップデートをリッスンし、ツイートのリアルタイム更新を実装しています。</p>
 					</div>
 				</Link>
 
-				<Link href="/todos" className="hover:bg-gray-100 transition">
+				<Link href="/todos" className="h-fit hover:bg-gray-100 transition">
 
 					<div className="border p-4">
 
 						<MdChecklist className="text-gray-500 text-4xl" />
 
 						<span className="mt-2 block text-2xl">Todos</span>
-						<p className="mt-2 text-gray-500">非公開のTodoをSSGとFirebase JavaScript SDKで表示します。<br/>ビルド時に生成したWebページをリクエストのたびにクライアントに返し、クライアント上でデータを読み書きします。</p>
+						<p className="mt-2 text-gray-500">非公開のTodoをSSGで表示します。</p>
+						<p className="mt-1 text-gray-500">ビルド時に生成したWebページをリクエストのたびにクライアントに返し、クライアント上でデータを読み書きします。</p>
 					</div>
 				</Link>
 			</div>
