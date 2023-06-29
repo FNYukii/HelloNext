@@ -1,8 +1,6 @@
 import Todo from "@/entities/Todo";
 import AuthService from "@/utilities/AuthService";
-import TodoService from "@/utilities/TodoService";
 import { useState, useEffect } from "react";
-import { MdOutlineClose } from "react-icons/md";
 import AddTodoModal from "./AddTodoModal";
 import { db } from "@/utilities/firebase";
 import { query, collection, where, orderBy, limit, onSnapshot } from "firebase/firestore";
