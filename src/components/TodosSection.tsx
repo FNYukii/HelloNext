@@ -5,6 +5,7 @@ import AddTodoModal from "./AddTodoModal";
 import { db } from "@/utilities/firebase";
 import { query, collection, where, orderBy, limit, onSnapshot } from "firebase/firestore";
 import { BsCheckCircle, BsCircle } from "react-icons/bs";
+import TodoService from "@/utilities/TodoService";
 
 function TodosSection() {
 
@@ -118,7 +119,7 @@ function TodosSection() {
 
 							<div key={todo.id} className="p-4 flex gap-4 items-center bg-gray-100">
 
-								<button className="hover:opacity-70">
+								<button onClick={async () => await TodoService.deleteTodo(todo.id)} className="hover:opacity-70">
 
 									<div className="relative w-4 h-4">
 
