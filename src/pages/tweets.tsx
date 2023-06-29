@@ -86,12 +86,6 @@ function Tweets(props: Props) {
 
 				<div className="flex gap-8">
 
-					<button onClick={() => location.reload()} className="flex items-center gap-2 hover:opacity-60 transition">
-
-						<AiOutlineReload className="text-xl" />
-						<span>Reload</span>
-					</button>
-
 					<button onClick={() => setIsOpenModal(true)} className="flex items-center gap-2 hover:opacity-60 transition">
 
 						<AiOutlinePlus className="text-xl" />
