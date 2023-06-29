@@ -1,11 +1,11 @@
 import Todo from "@/entities/Todo";
 import AuthService from "@/utilities/AuthService";
-import TodoService from "@/utilities/TodoService";
 import { useState, useEffect } from "react";
-import { MdOutlineClose } from "react-icons/md";
 import AddTodoModal from "./AddTodoModal";
 import { db } from "@/utilities/firebase";
 import { query, collection, where, orderBy, limit, onSnapshot } from "firebase/firestore";
+import { BsCheckCircle, BsCircle } from "react-icons/bs";
+import TodoService from "@/utilities/TodoService";
 
 function TodosSection() {
 
@@ -117,9 +117,20 @@ function TodosSection() {
 
 						{todos.map(todo => (
 
-							<div key={todo.id} className="p-4 bg-gray-100 space-y-2">
-								<p>{todo.text}</p>
-								<p className="text-gray-500">{todo.createdAt.toString()}</p>
+							<div key={todo.id} className="p-4 flex gap-4 items-center bg-gray-100">
+
+								<button onClick={async () => await TodoService.deleteTodo(todo.id)} className="hover:opacity-70">
+
+									<div className="relative w-4 h-4">
+
+										<BsCircle className="absolute top-0 text-gray-500 text-xl hover:opacity-0 transition" />
+										<BsCheckCircle className="absolute text-xl opacity-0 hover:opacity-100 transition" />
+									</div>
+								</button>
+
+								<div>
+									<p>{todo.text}</p>
+								</div>
 							</div>
 						))}
 					</div>

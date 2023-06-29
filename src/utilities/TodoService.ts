@@ -1,6 +1,6 @@
 import Todo from '@/entities/Todo'
 import { db } from "./firebase"
-import { query, collection, orderBy, limit, getDocs, where, addDoc, serverTimestamp } from 'firebase/firestore'
+import { query, collection, orderBy, limit, getDocs, where, addDoc, serverTimestamp, deleteDoc, doc } from 'firebase/firestore'
 import AuthService from './AuthService'
 
 export default class TodoService {
@@ -83,5 +83,19 @@ export default class TodoService {
 			console.log(`Failed to comment creation. ${error}`)
 			return null
 		}
+	}
+	
+	static async deleteTodo(todoId: string): Promise<string | null> {
+
+		return deleteDoc(doc(db, "todos", todoId))
+			.then(() => {
+
+				return todoId
+			})
+			.catch((error) => {
+
+				console.log(`Failed to todo deletion. ${error}`)
+				return null
+			})
 	}
 }
