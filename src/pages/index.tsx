@@ -12,7 +12,7 @@ export default function Home() {
 
 			<div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-				<Link href="/posts" className="h-fit border hover:bg-gray-100 transition">
+				<Link href="/posts" className="h-fit hover:bg-gray-100 transition">
 
 					<div className="border p-4">
 
