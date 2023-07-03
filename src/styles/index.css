@@ -46,5 +46,5 @@
 }
 
 .markdown li {
-	@apply text-gray-600 leading-7
+	@apply leading-7
 }

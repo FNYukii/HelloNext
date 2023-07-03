@@ -70,7 +70,7 @@ function PostPage(props: Props) {
 				<h1 className="text-2xl font-bold mt-6">{props.post.frontMatter.title}</h1>
 			</div>
 
-			<div dangerouslySetInnerHTML={{ __html: marked(props.post.content) }} className="markdown"></div>
+			<div dangerouslySetInnerHTML={{ __html: marked(props.post.content) }} className="markdown pb-16"></div>
 		</Layout>
 	)
 }
